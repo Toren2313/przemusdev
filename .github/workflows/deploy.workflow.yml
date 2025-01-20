@@ -1,4 +1,4 @@
-name: Main - Deploying on github pages
+name: Main - Deploying on GitHub Pages
 
 on:
   push:
@@ -36,9 +36,15 @@ jobs:
       - name: ESLint - fix
         run: npm run lint:fix
 
-      - name: Github Pages - Deploy
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: GitHub Pages - Deploy
         run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git remote set-url origin https://git:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
