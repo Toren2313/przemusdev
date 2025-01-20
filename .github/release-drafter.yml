@@ -1,0 +1,48 @@
+name-template: "Release v{{version}}"
+tag-template: "v{{version}}"
+
+categories:
+  - title: "✨ Features"
+    labels:
+      - feat
+
+  - title: "🐛 Bug Fixes"
+    labels:
+      - fix
+
+  - title: "📚 Documentation"
+    labels:
+      - docs
+
+  - title: "🔧 Chores"
+    labels:
+      - chore
+
+  - title: "🛠 Refactoring"
+    labels:
+      - refactor
+
+  - title: "✅ Tests"
+    labels:
+      - test
+
+  - title: "🎨 Styles"
+    labels:
+      - style
+
+  - title: "⚙️ Build/CI"
+    labels:
+      - build
+      - ci
+
+  - title: "💥 Breaking Changes"
+    labels:
+      - breaking-change
+      - major
+
+change-template: "- {{change}} ([@{{user}}]({{userUrl}}))"
+
+template: |
+  ## 🚀 What's New
+
+  {{CHANGELOG}}
