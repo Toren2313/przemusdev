@@ -1,48 +1,31 @@
-name-template: "Release v{{version}}"
-tag-template: "v{{version}}"
-
+name-template: "v$RESOLVED_VERSION 🌈"
+tag-template: "v$RESOLVED_VERSION"
 categories:
-  - title: "✨ Features"
+  - title: "🚀 Features"
     labels:
-      - feat
-
+      - "feature"
+      - "enhancement"
   - title: "🐛 Bug Fixes"
     labels:
-      - fix
-
-  - title: "📚 Documentation"
+      - "fix"
+      - "bugfix"
+      - "bug"
+  - title: "🧰 Maintenance"
+    label: "chore"
+change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
+change-title-escapes: '\<*_&'
+version-resolver:
+  major:
     labels:
-      - docs
-
-  - title: "🔧 Chores"
+      - "major"
+  minor:
     labels:
-      - chore
-
-  - title: "🛠 Refactoring"
+      - "minor"
+  patch:
     labels:
-      - refactor
-
-  - title: "✅ Tests"
-    labels:
-      - test
-
-  - title: "🎨 Styles"
-    labels:
-      - style
-
-  - title: "⚙️ Build/CI"
-    labels:
-      - build
-      - ci
-
-  - title: "💥 Breaking Changes"
-    labels:
-      - breaking-change
-      - major
-
-change-template: "- {{change}} ([@{{user}}]({{userUrl}}))"
-
+      - "patch"
+  default: patch
 template: |
-  ## 🚀 What's New
+  ## Changes
 
-  {{CHANGELOG}}
+  $CHANGES
