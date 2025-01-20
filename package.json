@@ -3,12 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://przemusdev.github.io/",
   "scripts": {
     "build": "tsc -b && vite build",
-    "start": "node ./dist/index.js",
+    "start": "npm run build && pm2 describe portfolio_website > /dev/null && pm2 restart portfolio_website || pm2 start ./dist/src/index.js --name portfolio_website",
     "dev": "vite",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -31,6 +33,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "gh-pages": "^6.3.0",
     "globals": "^15.14.0",
     "prettier": "^3.4.2",
     "tailwindcss": "^3.4.17",
