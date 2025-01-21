@@ -6,6 +6,6 @@ export default defineConfig({
   server: {
     port: 1337,
   },
-  base: "./",
+  base: "/toren2313.github.io",
   plugins: [react()],
 });
