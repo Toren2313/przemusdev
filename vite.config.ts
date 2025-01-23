@@ -6,6 +6,6 @@ export default defineConfig({
   server: {
     port: 1337,
   },
-  base: "/przemusdev/",
+  base: "/",
   plugins: [react()],
 });

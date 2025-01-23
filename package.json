@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://przemusdev.github.io/przemusdev",
+  "homepage": "https://toren2313.github.io/przemusdev",
   "scripts": {
     "build": "tsc -b && vite build",
     "start": "npm run build && pm2 describe portfolio_website > /dev/null && pm2 restart portfolio_website || pm2 start ./dist/src/index.js --name portfolio_website",
