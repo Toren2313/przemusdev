@@ -1,12 +1,16 @@
-name: Main - deploy
+name: Main - deploy and release
 
 on:
   push:
-    branches: ["main"]
-
+    branches:
+      - "main"
+  pull_request:
+    types:
+      - closed
   workflow_dispatch:
+
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -16,6 +20,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.event_name == 'push'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -51,3 +56,26 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  update-release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run Release Drafter
+        uses: release-drafter/release-drafter@v5
+
+  create-tag-and-release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create Release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.event.pull_request.head.sha }}
+          release_name: "Release ${{ github.event.pull_request.title }}"
+          draft: false
+          prerelease: false
