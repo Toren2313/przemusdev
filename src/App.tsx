@@ -1,7 +1,13 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainPage from "./pages/main.page";
 function App() {
   return (
     <>
-      <p>Hello</p>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/przemusdev/" element={<MainPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
