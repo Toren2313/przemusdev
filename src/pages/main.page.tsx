@@ -1,19 +1,15 @@
 import React from "react";
 
-function MainPage() {
+export default function MainPage() {
   return (
-    <div className="h-screen w-screen">
-      <div className="absolute h-96 w-80 border-[1px] border-white rounded-lg flex flex-col items-center justify-center">
-        <h1 className="text-3xl p-4">Przemyslaw</h1>
-        <p className="text-sm text-center text-secondary_text p-4">
-          Web Developer specializing in React.js and TailwindCSS with a strong command of JavaScript/TypeScript.
-          Proficient in building REST APIs using Express and Nest.js. Skilled in deploying code to production and
-          managing databases like MongoDB, MySQL, and PostgreSQL. Also I can create simple desktop applications with C#
-          and console applications in C++.
-        </p>
+    <div className="min-h-screen w-screen pt-20">
+      <div className="absolute h-[calc(100vh-5rem)] w-screen flex flex-col text-center items-center translate-y-20">
+        <div className=" h-80 w-[64rem] rounded-lg flex flex-col items-center justify-start">
+          <h1 className="text-3xl text-neon_violet p-5 pt-16">Hello, I'm Przemyslaw</h1>
+          <p className="text-7xl font-dm_sans font-bold text-center text-white p-2">14yo freelance developer</p>
+          {/* <p className="text-2xl font-poppins">5+</p> */}
+        </div>
       </div>
     </div>
   );
 }
-
-export default MainPage;
