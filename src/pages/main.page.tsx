@@ -9,19 +9,21 @@ export default function MainPage({ parallaxRef }: IParallaxRef) {
   return (
     <div className="min-h-screen w-screen pt-20">
       <div className="absolute min-h-[calc(100vh-5rem)] w-screen flex flex-col text-center items-center translate-y-20">
-        <div className=" h-96 w-[64rem] text-center rounded-lg flex flex-col items-center justify-start">
-          <h1 className="text-2xl font-extrabold font-dm_sans text-neon_violet p-8 pt-16">Hello, I'm Przemyslaw</h1>
-          <p className="text-7xl font-dm_sans font-bold text-center text-gray-200 p-5">14yo freelance developer</p>
-          <div className="h-32 w-full flex flex-row items-center justify-center gap-40 p-8 pt-10">
-            <p className="text-2xl text-neon_violet font-dm_sans font-extrabold flex flex-col">
-              5+ <span className="text-sm">YEARS LEARNING</span>
-            </p>
-            <p className="text-2xl text-neon_violet font-dm_sans font-extrabold flex flex-col">
-              2 <span className="text-sm">FINISHED PROJECT (PUBLIC)</span>
-            </p>
-            <p className="text-2xl text-neon_violet font-dm_sans font-extrabold flex flex-col">
-              2 <span className="text-sm">PROJECTS IN PROGRESS...</span>
-            </p>
+        <div className=" h-96 w-[64rem] p-1 text-center rounded-lg flex flex-col items-center justify-start bg-gradient-to-tr from-neon_violet via-pink-600 to-main_pink ">
+          <div className="bg-bg_color h-full w-full">
+            <h1 className="text-2xl font-extrabold font-dm_sans text-neon_violet p-8 pb-8">Hello, I'm Przemyslaw</h1>
+            <p className="text-7xl font-dm_sans font-bold text-center text-gray-200 p-5">14yo freelance developer</p>
+            <div className="h-32 w-full flex flex-row items-center justify-center gap-40 p-8 pt-10">
+              <p className="text-2xl text-neon_violet font-dm_sans font-extrabold flex flex-col">
+                5+ <span className="text-sm">YEARS LEARNING</span>
+              </p>
+              <p className="text-2xl text-neon_violet font-dm_sans font-extrabold flex flex-col">
+                2 <span className="text-sm">FINISHED PROJECT (PUBLIC)</span>
+              </p>
+              <p className="text-2xl text-neon_violet font-dm_sans font-extrabold flex flex-col">
+                2 <span className="text-sm">PROJECTS IN PROGRESS...</span>
+              </p>
+            </div>
           </div>
         </div>
         <button
