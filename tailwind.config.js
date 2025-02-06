@@ -7,11 +7,11 @@ export default withMT = {
   theme: {
     extend: {
       colors: {
-        bg_color: "#0F0F0F",
+        bg_color: "#0f0f0f",
         secondary_bg: "#211e1d",
         secondary_text: "#424242",
         main_pink: "#b50094",
-        neon_violet: "#B026FF",
+        neon_violet: "#b026ff",
       },
       fontFamily: {
         poppins: ["Poppins", ...fontFamily.sans],
