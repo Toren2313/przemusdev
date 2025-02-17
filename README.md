@@ -7,19 +7,19 @@ My portfolio
 Clone the project
 
 ```bash
-  git clone https://github.com/Toren2313/PrzemusDev.git
+  git clone https://github.com/Toren2313/przemusdev.git
 ```
 
 Or by ssh
 
 ```bash
-  git clone git@github.com:Toren2313/PrzemusDev.git
+  git clone git@github.com:Toren2313/przemusdev.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd PrzemusDev
+  cd przemusdev
 ```
 
 Install dependencies
