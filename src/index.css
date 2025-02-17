@@ -1,18 +1,71 @@
+@import url("https://fonts.cdnfonts.com/css/leoscar");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary: #211e1d;
+  --secondary: #b50094;
+
+  font-family: "Leoscar", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #0f0f0f;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* THIS CODE WROTE CHATGPT BTW BECAUSE I DONT LIKE GRADIENTS IN PLAIN CSS */
+@layer utilities {
+  .text-stroke-gradient {
+    -webkit-text-stroke: 3px transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #8e2de2, #ff0080, #ff4b2b);
+  }
+
+  .transition-cubic {
+    transition: width 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  @keyframes expand {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .animate-expand {
+    animation: expand 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 14px;
+  border: 3px solid var(--primary);
 }
