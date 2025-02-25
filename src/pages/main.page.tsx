@@ -1,4 +1,4 @@
-import { FaLongArrowAltDown } from "react-icons/fa";
+import { IoIosArrowDropdown } from "react-icons/io";
 import IParallaxRef from "../interfaces/IParalllaxRef";
 import { Helper } from "../utils/Helper";
 
@@ -31,12 +31,21 @@ export default function MainPage({ parallaxRef }: IParallaxRef) {
             </div>
           </div>
         </div>
-        <button
-          onClick={() => handleScroll(1)}
-          className="m-10 h-14 w-28 flex text-center items-center justify-center text-white animate-bounce bg-secondary_bg rounded-lg"
-        >
-          <FaLongArrowAltDown />
-        </button>
+        <nav className="flex flex-col gap-5 h-32 w-96 mt-10 justify-center items-center">
+          <button
+            onClick={() => handleScroll(2)}
+            className="mt-auto h-14 w-48 flex text-center items-center justify-center text-secondary_bg bg-white rounded-lg"
+          >
+            <p className="font-dm_sans text-sm">Let's work together!</p>
+          </button>
+          <button
+            onClick={() => handleScroll(1)}
+            className="mt-auto h-14 w-36 flex text-center items-center justify-center text-white bg-secondary_bg rounded-lg gap-2"
+          >
+            <p className="font-dm_sans text-sm">about me</p>
+            <IoIosArrowDropdown className="text-lg" />
+          </button>
+        </nav>
       </div>
     </div>
   );

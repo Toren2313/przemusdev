@@ -22,14 +22,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* THIS CODE WROTE CHATGPT BTW BECAUSE I DONT LIKE GRADIENTS IN PLAIN CSS */
+/*
+          THIS CODE WROTE CHATGPT BTW BECAUSE I DONT LIKE GRADIENTS IN PLAIN CSS
+          
+  NOTE 24.02.2025: HALF OF THIS CODE WRITE CHATGPT SECOND HALF ME
+*/
+
 @layer utilities {
   .text-stroke-gradient {
     -webkit-text-stroke: 3px transparent;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    background-image: linear-gradient(to right, #8e2de2, #ff0080, #ff4b2b);
+    background-image: linear-gradient(to right top, #8e2de2, #ff0080, #ff4b2b);
   }
 
   .transition-cubic {
@@ -43,14 +48,36 @@
       width: 100%;
     }
   }
-  .animate-expand {
-    animation: expand 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+  @keyframes disappearance {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
+
+  .animate-disappearance {
+    content: "";
+    animation: disappearance 0.9s ease-out forwards;
+    animation-delay: 1.6s;
+  }
+
+  .animate-expand {
+    animation: expand 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+}
+
+.custom-hover button:hover {
+  transform: scale(1.2);
+  transition: transform 0.125s ease-in-out;
 }
 
 /* Firefox */
 * {
-  scrollbar-width: auto;
+  scrollbar-width: thin;
   scrollbar-color: var(--secondary) var(--primary);
 }
 
