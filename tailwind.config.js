@@ -9,6 +9,7 @@ export default withMT = {
       colors: {
         bg_color: "#0f0f0f",
         secondary_bg: "#211e1d",
+        text_icons_bg: "#1a1817",
         secondary_text: "#424242",
         main_pink: "#b50094",
         neon_violet: "#b026ff",

@@ -1,24 +1,8 @@
-import { FaGithub, FaDiscord, FaWpforms } from "react-icons/fa";
-import {
-  CplusplusOriginal,
-  CsharpOriginal,
-  Css3Original,
-  EslintOriginal,
-  ExpressOriginal,
-  GithubOriginal,
-  Html5Original,
-  JavascriptOriginal,
-  NestjsOriginal,
-  NodejsOriginal,
-  PhpOriginal,
-  TailwindcssOriginal,
-  TypescriptOriginal,
-  ViteOriginal,
-} from "devicons-react";
+import { FaGithub, FaDiscord } from "react-icons/fa";
+
 import { FiExternalLink } from "react-icons/fi";
 import { Helper } from "../utils/Helper";
-import { GrReactjs } from "react-icons/gr";
-import { SiPrettier } from "react-icons/si";
+import { Buttons } from "../components/buttons";
 
 function AboutPage() {
   const openInNewTab = (url: string): void => {
@@ -34,9 +18,9 @@ function AboutPage() {
     <div className={Helper.SECTION_BASE_STYLE}>
       <div className={sideStyle}>
         <div className={gradientBoxStyle}>
-          <div className={`${boxStyle} flex flex-col text-center items-stretch`}>
-            <h1 className="w-full h-10 p-8 text-2xl font-dm_sans">About me</h1>
-            <p className="text-sm text-justify font-dm_sans text-white p-4">
+          <div className={`${boxStyle} flex flex-col text-center items-stretch p-3 gap-5`}>
+            <h1 className="w-full h-10 p-2 text-2xl font-dm_sans">About me</h1>
+            <p className="text-sm text-justify font-dm_sans text-white p-4 bg-text_icons_bg rounded-md">
               I am a Web Developer specializing in React.js and Tailwind CSS, with extensive expertise in
               JavaScript/TypeScript. Proficient in building REST APIs using Express and Nest.js frameworks. Experienced
               in deploying production-ready code and managing both relational databases (MySQL, PostgreSQL) and NoSQL
@@ -68,40 +52,8 @@ function AboutPage() {
         <div className={gradientBoxStyle}>
           <div className={`${boxStyle} flex flex-col gap-5 p-4`}>
             <h1 className="w-full h-10 p-2 text-2xl font-dm_sans">My Skills</h1>
-            <h2 className="w-full h-20 p-2 font-dm_sans">
-              Programming Languages:
-              <li className="flex flex-row items-center justify-center gap-5 m-0 p-2 h-10 w-full list-none">
-                <CsharpOriginal size={22} />
-                <CplusplusOriginal size={22} />
-                <Html5Original size={22} />
-                <Css3Original size={22} />
-                <PhpOriginal size={22} />
-                <JavascriptOriginal size={22} />
-                <TypescriptOriginal size={22} />
-              </li>
-            </h2>
-
-            <h2 className="w-full h-20 p-2 font-dm_sans">
-              Technologies:
-              <li className="flex flex-wrap items-center justify-center gap-5 m-0 p-2 h-10 list-none">
-                <NodejsOriginal size={22} />
-                <ExpressOriginal size={22} />
-                <NestjsOriginal size={22} />
-                <ViteOriginal size={22} />
-                <EslintOriginal size={22} />
-                <SiPrettier size={22} />
-                <GithubOriginal size={22} />
-              </li>
-            </h2>
-            <h2 className="w-full h-20 p-2 font-dm_sans">
-              Frameworks:
-              <li className="flex flex-wrap items-center justify-center gap-5 m-0 p-2 h-10 list-none">
-                <TailwindcssOriginal size={22} />
-                <GrReactjs size={22} />
-                <NestjsOriginal size={22} />
-                <FaWpforms size={22} />
-              </li>
-            </h2>
+            <h2 className="w-full h-10 p-2 font-dm_sans">Programming Languages + tech stack:</h2>
+            <Buttons />
           </div>
         </div>
       </div>

@@ -29,10 +29,10 @@ export default function App() {
       <BrowserRouter>
         <Navbar parallaxRef={ref} />
         <Parallax ref={ref} pages={2} style={{ top: 0, left: 0 }}>
-          <ParallaxLayer offset={0} speed={2.5}>
+          <ParallaxLayer offset={0} speed={0.4}>
             <MainPage parallaxRef={ref} />
           </ParallaxLayer>
-          <ParallaxLayer offset={1} speed={2.5}>
+          <ParallaxLayer offset={1} speed={0.4}>
             <AboutPage />
           </ParallaxLayer>
         </Parallax>
