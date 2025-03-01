@@ -14,6 +14,8 @@ import {
   VitejsOriginal,
 } from "devicons-react";
 import { FaWpforms } from "react-icons/fa";
+import { Tooltip } from "./tooltip";
+
 export const Buttons = () => {
   const openInNewTab = (url: string): void => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
@@ -21,80 +23,114 @@ export const Buttons = () => {
   };
   return (
     <ul className="flex flex-wrap items-center justify-center gap-5 m-0 p-4 h-36 w-full list-none bg-text_icons_bg rounded-md custom-hover">
-      <button>
-        <CsharpOriginal onClick={() => openInNewTab("https://learn.microsoft.com/en-us/dotnet/csharp/")} size={22} />
-      </button>
+      <Tooltip text="C#">
+        <button>
+          <CsharpOriginal onClick={() => openInNewTab("https://learn.microsoft.com/en-us/dotnet/csharp/")} size={22} />
+        </button>
+      </Tooltip>
 
-      <button>
-        <CplusplusOriginal
-          onClick={() => openInNewTab("https://learn.microsoft.com/en-us/cpp/?view=msvc-170")}
-          size={22}
-        />
-      </button>
+      <Tooltip text="c++">
+        <button>
+          <CplusplusOriginal
+            onClick={() => openInNewTab("https://learn.microsoft.com/en-us/cpp/?view=msvc-170")}
+            size={22}
+          />
+        </button>
+      </Tooltip>
 
-      <button>
-        <Html5Original onClick={() => openInNewTab("https://html.spec.whatwg.org/multipage/")} size={22} />
-      </button>
+      <Tooltip text="html5">
+        <button>
+          <Html5Original onClick={() => openInNewTab("https://html.spec.whatwg.org/multipage/")} size={22} />
+        </button>
+      </Tooltip>
 
-      <button>
-        <Css3Original onClick={() => openInNewTab("https://devdocs.io/css/")} size={22} />
-      </button>
+      <Tooltip text="css3">
+        <button>
+          <Css3Original onClick={() => openInNewTab("https://devdocs.io/css/")} size={22} />
+        </button>
+      </Tooltip>
 
-      <button>
-        <PhpOriginal onClick={() => openInNewTab("https://www.php.net/docs.php")} size={22} />
-      </button>
+      <Tooltip text="php">
+        <button>
+          <PhpOriginal onClick={() => openInNewTab("https://www.php.net/docs.php")} size={22} />
+        </button>
+      </Tooltip>
 
-      <button>
-        <JavascriptOriginal
-          onClick={() => openInNewTab("https://developer.mozilla.org/en-US/docs/Web/JavaScript")}
-          size={22}
-        />
-      </button>
+      <Tooltip text="javascript">
+        <button>
+          <JavascriptOriginal
+            onClick={() => openInNewTab("https://developer.mozilla.org/en-US/docs/Web/JavaScript")}
+            size={22}
+          />
+        </button>
+      </Tooltip>
 
-      <button>
-        <TypescriptOriginal onClick={() => openInNewTab("https://www.typescriptlang.org/docs/")} size={22} />
-      </button>
+      <Tooltip text="typescript">
+        <button>
+          <TypescriptOriginal onClick={() => openInNewTab("https://www.typescriptlang.org/docs/")} size={22} />
+        </button>
+      </Tooltip>
 
-      <button>
-        <NodejsOriginal onClick={() => openInNewTab("https://nodejs.org/docs/latest/api/")} size={22} />
-      </button>
-      <button>
-        <SiExpress onClick={() => openInNewTab("https://expressjs.com/")} size={22} />
-      </button>
+      <Tooltip text="nodejs">
+        <button>
+          <NodejsOriginal onClick={() => openInNewTab("https://nodejs.org/docs/latest/api/")} size={22} />
+        </button>
+      </Tooltip>
 
-      <button>
-        <NestjsOriginal onClick={() => openInNewTab("https://docs.nestjs.com/")} size={22} />
-      </button>
+      <Tooltip text="expressjs">
+        <button>
+          <SiExpress onClick={() => openInNewTab("https://expressjs.com/")} size={22} />
+        </button>
+      </Tooltip>
 
-      <button>
-        <VitejsOriginal onClick={() => openInNewTab("https://vite.dev/")} size={22} />
-      </button>
+      <Tooltip text="nestjs">
+        <button>
+          <NestjsOriginal onClick={() => openInNewTab("https://docs.nestjs.com/")} size={22} />
+        </button>
+      </Tooltip>
 
-      <button>
-        <EslintOriginal onClick={() => openInNewTab("https://eslint.org/docs/latest/")} size={22} />
-      </button>
-      <button>
-        <SiPrettier onClick={() => openInNewTab("https://prettier.io/docs/")} size={22} />
-      </button>
+      <Tooltip text="vitejs">
+        <button>
+          <VitejsOriginal onClick={() => openInNewTab("https://vite.dev/")} size={22} />
+        </button>
+      </Tooltip>
 
-      <button>
-        <SiGithubactions onClick={() => openInNewTab("https://github.com/features/actions")} size={22} />
-      </button>
+      <Tooltip text="eslint">
+        <button>
+          <EslintOriginal onClick={() => openInNewTab("https://eslint.org/docs/latest/")} size={22} />
+        </button>
+      </Tooltip>
 
-      <button>
-        <TailwindcssOriginal onClick={() => openInNewTab("https://tailwindcss.com/")} size={22} />
-      </button>
+      <Tooltip text="prettier">
+        <button>
+          <SiPrettier onClick={() => openInNewTab("https://prettier.io/docs/")} size={22} />
+        </button>
+      </Tooltip>
 
-      <button>
-        <FaWpforms
-          onClick={() =>
-            openInNewTab(
-              "https://learn.microsoft.com/en-us/dotnet/desktop/wpf/getting-started/?view=netframeworkdesktop-4.8",
-            )
-          }
-          size={22}
-        />
-      </button>
+      <Tooltip text="github actions">
+        <button>
+          <SiGithubactions onClick={() => openInNewTab("https://github.com/features/actions")} size={22} />
+        </button>
+      </Tooltip>
+
+      <Tooltip text="tailwindcss">
+        <button>
+          <TailwindcssOriginal onClick={() => openInNewTab("https://tailwindcss.com/")} size={22} />
+        </button>
+      </Tooltip>
+
+      <Tooltip text="Wpf">
+        <button>
+          <FaWpforms
+            onClick={() =>
+              openInNewTab(
+                "https://learn.microsoft.com/en-us/dotnet/desktop/wpf/getting-started/?view=netframeworkdesktop-4.8",
+              )
+            }
+            size={22}
+          />
+        </button>
+      </Tooltip>
     </ul>
   );
 };
