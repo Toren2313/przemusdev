@@ -19,6 +19,60 @@ export default withMT = {
         dm_sans: ["DM Sans", ...fontFamily.sans],
         inter: ["Inter", ...fontFamily.serif],
       },
+      keyframes: {
+        appearance: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        disappearance: {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+        expand: {
+          "0%": { width: "0px" },
+          "100%": { width: "100%" },
+        },
+      },
+      animation: {
+        /**
+         * Apperance
+         *
+         * fast - 0.2s
+         * normal - 1s
+         * slow - 2s
+         */
+        "appearance-fast": "appearance 0.2s ease-out forwards",
+        "appearance-normal": "appearance 1s ease-out forwards",
+        "appearance-slow": "appearance 2s ease-out forwards",
+
+        /**
+         * disapperance
+         *
+         * delay-0 - 0s
+         * delay-300 - 0.25s (only in this duration 0.5s)
+         * delay-500 - 0.5s
+         * delay-1600 - 1.6s
+         */
+        "disappearance-delay-0": "disappearance 0.9s ease-out 0s forwards",
+        "disappearance-delay-300": "disappearance 0.5s ease-out 300ms forwards",
+        "disappearance-delay-500": "disappearance 0.9s ease-out 500ms forwards",
+        "disappearance-delay-1600": "disappearance 0.9s ease-out 1600ms forwards",
+
+        /**
+         * expand
+         *
+         * fast - 0.2s
+         * normal - 1s
+         * slow - 2s
+         */
+
+        "expand-fast": "expand 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards",
+        "expand-normal": "expand 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards",
+        "expand-slow": "expand 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards",
+      },
+      transitionTimingFunction: {
+        "ease-out-quad": "cubic-bezier(0.165, 0.84, 0.44, 1)",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

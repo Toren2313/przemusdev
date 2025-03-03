@@ -40,34 +40,6 @@
   .transition-cubic {
     transition: width 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
-  @keyframes expand {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  @keyframes disappearance {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
-  .animate-disappearance {
-    content: "";
-    animation: disappearance 0.9s ease-out forwards;
-    animation-delay: 1.6s;
-  }
-
-  .animate-expand {
-    animation: expand 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-  }
 }
 
 .custom-hover button:hover {
