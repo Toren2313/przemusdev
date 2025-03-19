@@ -1,8 +1,23 @@
 import { useState } from "react";
-import { ITooltipProps } from "../interfaces/ITooltipProps";
+import { ITooltipProps, TooltipPos } from "../interfaces/ITooltip";
 
 export const Tooltip = (props: ITooltipProps) => {
   const [isHidden, setIsHidden] = useState<boolean>(true);
+
+  const setTooltipPosition = (): string => {
+    switch (props.position) {
+      case TooltipPos.top:
+        return "-top-16 left-1/2 -translate-x-1/2";
+      case TooltipPos.bottom:
+        return "top-16 left-1/2 -translate-x-1/2";
+      case TooltipPos.left:
+        return "-top-1/2 -left-16 -translate-x-1/2";
+      case TooltipPos.right:
+        return "-top-1/2 -right-16 translate-x-1/2";
+      default:
+        return "-top-16 left-1/2 -translate-x-1/2";
+    }
+  };
 
   // const speechBubble: string =
   //   "after:border-2 after:border-solid after:border-transparent after:border-b-0 after:border-l-0 after:-ml-4 after:-mb-8 after:left-1/2 after:bottom-0 after:content-['']";
@@ -15,7 +30,7 @@ export const Tooltip = (props: ITooltipProps) => {
         onMouseLeave={() => setTimeout(() => setIsHidden(true), 300)}
       >
         <div
-          className={`absolute flex items-center justify-center cursor-pointer p-[0.125rem] -top-16 left-1/2 -translate-x-1/2 min-h-8 min-w-20 h-auto w-auto rounded-md z-[999] bg-gradient-to-tr from-neon_violet via-pink-600 to-main_pink animate-appearance-fast ${isHidden ? "hidden" : ""}`}
+          className={`absolute flex items-center justify-center cursor-pointer p-[0.125rem] ${setTooltipPosition()} min-h-8 min-w-20 h-auto w-auto rounded-md z-[999] bg-gradient-to-tr from-neon_violet via-pink-600 to-main_pink animate-appearance-fast ${isHidden ? "hidden" : ""}`}
           onMouseEnter={() => setIsHidden(false)}
           onMouseLeave={() => setTimeout(() => setIsHidden(true), 300)}
         >
