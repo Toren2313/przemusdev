@@ -15,9 +15,4 @@ export abstract class Helper {
    * Style for every section (only parent element)
    */
   static readonly SECTION_BASE_STYLE: string = "absolute h-[calc(100vh-5rem)] w-screen flex translate-y-20";
-  /**
-   * Generates a gradient SVG for text styling.
-   * @param {IGradientSvgProps} props - Gradient color values.
-   * @returns {JSX.Element} JSX for SVG gradient.
-   */
 }

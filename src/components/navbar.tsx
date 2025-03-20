@@ -2,11 +2,18 @@ import { GoHome, GoFileDirectory } from "react-icons/go";
 import { FaEye } from "react-icons/fa";
 import IParallaxRef from "../interfaces/IParalllaxRef";
 import IGradientSvgProps from "../interfaces/IGradientSvgProps";
+import { Tooltip } from "./tooltip";
+import { TooltipPos } from "../interfaces/ITooltip";
 
 export const Navbar = ({ parallaxRef }: IParallaxRef) => {
   const handleScroll = (page: number) => {
     parallaxRef.current?.scrollTo(page);
   };
+  /**
+   * Generates a gradient SVG for text styling.
+   * @param {IGradientSvgProps} props - Gradient color values.
+   * @returns {JSX.Element} JSX for SVG gradient.
+   */
   const CreateGradientSVG = ({ startColor, middleColor, endColor }: IGradientSvgProps): JSX.Element => {
     return (
       <svg width="0" height="0">
@@ -29,10 +36,14 @@ export const Navbar = ({ parallaxRef }: IParallaxRef) => {
       <nav className="bg-secondary_bg h-1/2 w-1/5 flex flex-row gap-1 items-center justify-start rounded-xl p-4">
         <CreateGradientSVG startColor="#b026ff" middleColor="#db2777" endColor="#b50094" />
         <button onClick={() => handleScroll(0)}>
-          <GoHome className={`${btnStyle} hover:fill-[url(#gradient)]`} />
+          <Tooltip position={TooltipPos.bottom} text="home">
+            <GoHome className={`${btnStyle} hover:fill-[url(#gradient)]`} />
+          </Tooltip>
         </button>
         <button onClick={() => handleScroll(1)}>
-          <GoFileDirectory className={`${btnStyle} hover:fill-[url(#gradient)]`} />
+          <Tooltip position={TooltipPos.bottom} text="about me">
+            <GoFileDirectory className={`${btnStyle} hover:fill-[url(#gradient)]`} />
+          </Tooltip>
         </button>
       </nav>
       <h1 className="text-xl p-4 flex flex-row gap-10">

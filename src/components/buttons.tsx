@@ -30,7 +30,7 @@ export const Buttons = () => {
         </button>
       </Tooltip>
 
-      <Tooltip position={TooltipPos.top} text="c++">
+      <Tooltip position={TooltipPos.top} top={100} text="c++">
         <button>
           <CplusplusOriginal
             onClick={() => openInNewTab("https://learn.microsoft.com/en-us/cpp/?view=msvc-170")}

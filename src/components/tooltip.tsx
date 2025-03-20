@@ -7,7 +7,7 @@ export const Tooltip = (props: ITooltipProps) => {
   const setTooltipPosition = (): string => {
     switch (props.position) {
       case TooltipPos.top:
-        return "-top-16 left-1/2 -translate-x-1/2";
+        return `${props.top !== undefined ? `-top-[${props.top}px]` : "-top-16"} left-1/2 -translate-x-1/2`;
       case TooltipPos.bottom:
         return "top-16 left-1/2 -translate-x-1/2";
       case TooltipPos.left:
