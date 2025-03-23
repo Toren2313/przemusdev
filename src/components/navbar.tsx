@@ -36,12 +36,12 @@ export const Navbar = ({ parallaxRef }: IParallaxRef) => {
       <nav className="bg-secondary_bg h-1/2 w-1/5 flex flex-row gap-1 items-center justify-start rounded-xl p-4">
         <CreateGradientSVG startColor="#b026ff" middleColor="#db2777" endColor="#b50094" />
         <button onClick={() => handleScroll(0)}>
-          <Tooltip position={TooltipPos.bottom} text="home">
+          <Tooltip position={TooltipPos.bottom} gap={48} text="home">
             <GoHome className={`${btnStyle} hover:fill-[url(#gradient)]`} />
           </Tooltip>
         </button>
         <button onClick={() => handleScroll(1)}>
-          <Tooltip position={TooltipPos.bottom} text="about me">
+          <Tooltip position={TooltipPos.bottom} gap={48} text="about me">
             <GoFileDirectory className={`${btnStyle} hover:fill-[url(#gradient)]`} />
           </Tooltip>
         </button>

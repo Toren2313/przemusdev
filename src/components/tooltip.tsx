@@ -1,21 +1,47 @@
 import { useState } from "react";
 import { ITooltipProps, TooltipPos } from "../interfaces/ITooltip";
+import CSS from "csstype";
 
+/**
+ * Simple Tooltip with text inside
+ *
+ * @param children React.ReactElement
+ * @param position: TooltipPos
+ * @param text string
+ * @returns React Component
+ */
 export const Tooltip = (props: ITooltipProps) => {
   const [isHidden, setIsHidden] = useState<boolean>(true);
 
+  /**
+   *  I had to create that function becouse
+   *  Tailwind doesn't support dynamic variables in classname :(
+   *
+   * @returns CSS object
+   */
+  const createGapCSSObj = (): CSS.Properties => {
+    switch (props.position) {
+      case TooltipPos.bottom:
+        return { top: props.gap ? `${props.gap}px` : "4rem" };
+      case TooltipPos.left:
+        return { left: props.gap ? `-${props.gap}px` : "-4rem" };
+      case TooltipPos.right:
+        return { right: props.gap ? `-${props.gap}px` : "-4rem" };
+      default:
+        return { top: props.gap ? `-${props.gap}px` : "-4rem" };
+    }
+  };
+
   const setTooltipPosition = (): string => {
     switch (props.position) {
-      case TooltipPos.top:
-        return `${props.top !== undefined ? `-top-[${props.top}px]` : "-top-16"} left-1/2 -translate-x-1/2`;
       case TooltipPos.bottom:
-        return "top-16 left-1/2 -translate-x-1/2";
+        return "left-1/2 -translate-x-1/2"; // 4rem (top)
       case TooltipPos.left:
-        return "-top-1/2 -left-16 -translate-x-1/2";
+        return "-top-1/2 -translate-x-1/2"; // -4rem (left)
       case TooltipPos.right:
-        return "-top-1/2 -right-16 translate-x-1/2";
+        return "-top-1/2 translate-x-1/2"; // -4rem (right)
       default:
-        return "-top-16 left-1/2 -translate-x-1/2";
+        return "left-1/2 -translate-x-1/2"; // -4rem (top)
     }
   };
 
@@ -31,6 +57,7 @@ export const Tooltip = (props: ITooltipProps) => {
       >
         <div
           className={`absolute flex items-center justify-center cursor-pointer p-[0.125rem] ${setTooltipPosition()} min-h-8 min-w-20 h-auto w-auto rounded-md z-[999] bg-gradient-to-tr from-neon_violet via-pink-600 to-main_pink animate-appearance-fast ${isHidden ? "hidden" : ""}`}
+          style={createGapCSSObj()}
           onMouseEnter={() => setIsHidden(false)}
           onMouseLeave={() => setTimeout(() => setIsHidden(true), 300)}
         >
