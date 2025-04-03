@@ -3,7 +3,6 @@ import withMT from "@material-tailwind/react/utils/withMT";
 const { fontFamily, colors } = require("tailwindcss/defaultTheme");
 
 export default withMT = {
-  safelist: [{ pattern: /-top-\[\d+]px/ }],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {

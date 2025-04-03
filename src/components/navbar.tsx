@@ -1,4 +1,4 @@
-import { GoHome, GoFileDirectory } from "react-icons/go";
+import { GoHome, GoFileDirectory, GoProject } from "react-icons/go";
 import { FaEye } from "react-icons/fa";
 import IParallaxRef from "../interfaces/IParalllaxRef";
 import IGradientSvgProps from "../interfaces/IGradientSvgProps";
@@ -43,6 +43,11 @@ export const Navbar = ({ parallaxRef }: IParallaxRef) => {
         <button onClick={() => handleScroll(1)}>
           <Tooltip position={TooltipPos.bottom} gap={48} text="about me">
             <GoFileDirectory className={`${btnStyle} hover:fill-[url(#gradient)]`} />
+          </Tooltip>
+        </button>
+        <button onClick={() => handleScroll(2)}>
+          <Tooltip position={TooltipPos.bottom} gap={48} text="My Projects">
+            <GoProject className={`${btnStyle} hover:fill-[url(#gradient)]`} />
           </Tooltip>
         </button>
       </nav>
