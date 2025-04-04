@@ -32,6 +32,10 @@ export default withMT = {
           "0%": { width: "0px" },
           "100%": { width: "100%" },
         },
+        move_background: {
+          "0%, 100%": { "background-position": "0% 50%" },
+          "50%": { "background-position": "100% 50%" },
+        },
       },
       animation: {
         /**
@@ -69,7 +73,13 @@ export default withMT = {
         "expand-fast": "expand 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards",
         "expand-normal": "expand 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards",
         "expand-slow": "expand 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards",
+        /**
+         * move bg
+         *
+         */
+        "move-background": "move_background 3s ease infinite",
       },
+
       transitionTimingFunction: {
         "ease-out-quad": "cubic-bezier(0.165, 0.84, 0.44, 1)",
       },

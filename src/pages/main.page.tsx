@@ -23,10 +23,10 @@ export default function MainPage({ parallaxRef }: IParallaxRef) {
                 5+ <span className="text-sm">YEARS LEARNING</span>
               </p>
               <p className={`${pStyle} ${Helper.GRADIENT_STYLE}`}>
-                2 <span className="text-sm">FINISHED PROJECTS</span>
+                2 <span className="text-sm">FINISHED PUBLIC PROJECTS</span>
               </p>
               <p className={`${pStyle} ${Helper.GRADIENT_STYLE}`}>
-                2 <span className="text-sm">PROJECTS IN PROGRESS...</span>
+                2 <span className="text-sm">PROJECTS IN PROGRESS</span>
               </p>
             </div>
           </div>
@@ -38,13 +38,20 @@ export default function MainPage({ parallaxRef }: IParallaxRef) {
           >
             <p className="font-dm_sans text-sm">Let's work together!</p>
           </button>
+          {/* <div
+            style={{
+              backgroundImage: "conic-gradient(from var(--angle), #b026ff, #db2777, #b50094)",
+            }}
+            className="z-10 to-main_pink p-[2px] rounded-md animate-gradient bg-[length:400%_400%]"
+          > */}
           <button
             onClick={() => handleScroll(1)}
-            className="mt-auto h-14 w-36 flex text-center items-center justify-center text-white bg-secondary_bg rounded-lg gap-2"
+            className="relative mt-auto h-14 w-36 flex text-center items-center justify-center -z-10 text-white bg-secondary_bg rounded-lg gap-2"
           >
             <p className="font-dm_sans text-sm">about me</p>
             <IoIosArrowDropdown className="text-lg" />
           </button>
+          {/* </div> */}
         </nav>
       </div>
     </div>
