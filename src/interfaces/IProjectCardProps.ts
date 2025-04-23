@@ -1,4 +1,4 @@
-export default interface IProject {
+export default interface IProjectCardProps {
   title: string;
   description: string;
   imgSrc: string;

@@ -11,7 +11,9 @@ export const Navbar = ({ parallaxRef }: IParallaxRef) => {
   };
   /**
    * Generates a gradient SVG for text styling.
-   * @param {IGradientSvgProps} props - Gradient color values.
+   * @param {string} startColor - Start hex value of color.
+   * @param {string} middleColor - Middle hex value of color. (not required)
+   * @param {string} endColor - End hex value of color.
    * @returns {JSX.Element} JSX for SVG gradient.
    */
   const CreateGradientSVG = ({ startColor, middleColor, endColor }: IGradientSvgProps): JSX.Element => {

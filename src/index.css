@@ -47,6 +47,25 @@
   transition: transform 0.125s ease-in-out;
 }
 
+@keyframes animate-gradient {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+.animate-gradient {
+  animation: animate-gradient 3s linear infinite;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
 /* Firefox */
 * {
   scrollbar-width: thin;
