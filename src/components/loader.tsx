@@ -9,7 +9,6 @@ function Loader() {
       >
         PrzemusDev
       </h1>
-      <p className="font-dm_sans">{"By Przemus :3"}</p>
     </main>
   );
 }

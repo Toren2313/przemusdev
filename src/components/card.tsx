@@ -25,8 +25,7 @@ function Card(props: IProjectCardProps) {
                 onClick={() => openInNewTab(props.externaLink!)}
                 className="w-1/2 h-full bg-secondary_bg rounded-lg flex flex-row justify-center items-center"
               >
-                <p className="text-base font-bold text-center w-3/4 h-full font-dm_sans p-1">repository</p>
-                //FIXME:naprawic ten tekst zeby byl na srodky frajer
+                <p className="text-base font-bold text-center w-3/4 h-full font-dm_sans p-2">repository</p>
                 <FiExternalLink className="m-2" />
               </button>
             ) : null}
@@ -36,7 +35,7 @@ function Card(props: IProjectCardProps) {
               }}
               className="w-1/2 h-full flex flex-row justify-center items-center gap-1 rounded-lg"
             >
-              <p className="flex justify-center items-center w-full h-full text-clip text-center text-base font-bold font-dm_sans p-1">
+              <p className="flex justify-center items-center w-full h-full text-clip text-center text-base font-bold font-dm_sans p-1 pointer-events-none">
                 {props.openSrc ? `open source` : "closed source"}
                 {props.openSrc ? <FaUnlock className="m-1" /> : <FaLock className="m-1" />}
               </p>

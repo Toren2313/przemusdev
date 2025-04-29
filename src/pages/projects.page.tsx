@@ -25,12 +25,12 @@ const projects: IProject[] = [
   },
 ];
 
-const SECTION_BASE_STYLE_CUSTOM: string = "min-h-screen h-screen min-w-screen w-screen flex translate-y-20";
+const SECTION_BASE_STYLE_CUSTOM: string = "min-h-screen min-w-screen w-screen flex lg:h-screen";
 
 function ProjectsPage() {
   return (
     <div className={SECTION_BASE_STYLE_CUSTOM}>
-      <div className="max-w-full w-full max-h-full h-full flex flex-col">
+      <div className="max-w-full w-full max-h-full h-full flex flex-col justify-center items-center">
         <div className="w-full max-h-[70%] h-[70%] container mx-auto flex flex-col items-center justify-center">
           <h1 className="font-dm_sans w-full text-center text-xl py-10">My pinned Projects</h1>
           <ul className="container mx-auto w-full grid xl:grid-cols-3 gap-10 place-items-center">

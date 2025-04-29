@@ -16,7 +16,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    window.addEventListener("load", Loader);
+    window.addEventListener("load", handleLoading);
 
     return () => window.removeEventListener("load", handleLoading);
   }, []);

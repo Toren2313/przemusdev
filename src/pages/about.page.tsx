@@ -13,7 +13,7 @@ function AboutPage() {
     "w-96 h-[30rem] p-1 rounded-lg bg-gradient-to-tr from-neon_violet via-pink-600 to-main_pink";
 
   const boxStyle: string = "h-full w-full bg-secondary_bg relative shadow";
-  const sideStyle: string = "w-1/2 h-full flex justify-center text-center items-center";
+  const sideStyle: string = "w-1/2 h-full flex justify-center text-center items-center min-h-screen";
   return (
     <div className={Helper.SECTION_BASE_STYLE}>
       <div className={sideStyle}>

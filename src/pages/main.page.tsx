@@ -11,7 +11,7 @@ export default function MainPage({ parallaxRef }: IParallaxRef) {
 
   return (
     <div className="min-h-screen w-screen pt-20">
-      <div className={`flex-col text-center items-center ${Helper.SECTION_BASE_STYLE}`}>
+      <div className={`flex-col text-center items-center justify-center ${Helper.SECTION_BASE_STYLE}`}>
         <div className=" h-96 w-[64rem] p-1 text-center rounded-lg flex flex-col items-center justify-start bg-gradient-to-tr from-neon_violet via-pink-600 to-main_pink">
           <div className="bg-bg_color h-full w-full">
             <h1 className={`text-2xl font-extrabold font-dm_sans p-8 pb-8 ${Helper.GRADIENT_STYLE}`}>
