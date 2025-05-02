@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require("tailwindcss/defaultTheme");
 import withMT from "@material-tailwind/react/utils/withMT";
-const { fontFamily, colors } = require("tailwindcss/defaultTheme");
 
 export default withMT = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -33,8 +33,9 @@ export default withMT = {
           "100%": { width: "100%" },
         },
         move_background: {
-          "0%, 100%": { "background-position": "0% 50%" },
+          "0%": { "background-position": "0% 50%" },
           "50%": { "background-position": "100% 50%" },
+          "100%": { "background-position": "0% 50%" },
         },
       },
       animation: {
@@ -45,7 +46,7 @@ export default withMT = {
          * normal - 1s
          * slow - 2s
          */
-        "appearance-fast": "appearance 0.2s ease-out forwards",
+        "appearance-fast": "appearance 0.3s ease-out forwards",
         "appearance-normal": "appearance 1s ease-out forwards",
         "appearance-slow": "appearance 2s ease-out forwards",
 
@@ -78,8 +79,13 @@ export default withMT = {
          *
          */
         "move-background": "move_background 3s ease infinite",
-      },
 
+        /**
+         * Button custom aniamtions
+         *
+         */
+        "button-move_bg_appearance": "appearance 0.3s ease-in-out forwards,move_background 3s ease infinite",
+      },
       transitionTimingFunction: {
         "ease-out-quad": "cubic-bezier(0.165, 0.84, 0.44, 1)",
       },

@@ -10,10 +10,10 @@ function Card(props: IProjectCardProps) {
 
   return (
     <div className="max-h-[32rem] h-[32rem] max-w-[34rem] w-[34rem] flex justify-center px-8">
-      <div className="max-w-[34rem] w-full h-auto max-h-80 bg-gradient-to-tr from-neon_violet via-pink-600 to-main_pink p-1 rounded-lg container">
+      <div className="max-w-[34rem] w-full h-auto max-h-80 bg-gradient-to-tr from-neon_violet via-pink-600 to-main_pink p-1 rounded-lg">
         <article className="w-full h-full">
           <div className="w-full h-full bg-secondary_bg">
-            <img className="max-w-full w-full h-full max-h-full rounded-lg" src={props.imgSrc} />
+            <img className="max-w-full w-full h-full max-h-full rounded-lg object-cover" src={props.imgSrc} />
           </div>
         </article>
         <div className="w-full flex flex-col items-start mt-4">

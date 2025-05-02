@@ -38,20 +38,24 @@ export default function MainPage({ parallaxRef }: IParallaxRef) {
           >
             <p className="font-dm_sans text-sm">Let's work together!</p>
           </button>
-          {/* <div
-            style={{
-              backgroundImage: "conic-gradient(from var(--angle), #b026ff, #db2777, #b50094)",
-            }}
-            className="z-10 to-main_pink p-[2px] rounded-md animate-gradient bg-[length:400%_400%]"
-          > */}
           <button
             onClick={() => handleScroll(1)}
-            className="relative mt-auto h-14 w-36 flex text-center items-center justify-center -z-10 text-white bg-secondary_bg rounded-lg gap-2"
+            className={`
+              relative mt-auto h-14 w-36 flex text-center items-center justify-center bg-secondary_bg text-white rounded-lg
+              before:top-0 before:left-0 
+              before:absolute before:h-full before:w-full 
+              before:bg-gradient-to-tr from-neon_violet via-pink-600 to-main_pink 
+              before:rounded-lg
+              before:bg-[length:200%_200%]
+              before:blur-lg before:brightness-125 before:-z-10 before:opacity-0 before:inset-0
+              before:animate-none
+              before:hover:animate-button-move_bg_appearance
+              before:[&:not(:hover)]:animate-disappearance-delay-0
+              `}
           >
-            <p className="font-dm_sans text-sm">about me</p>
-            <IoIosArrowDropdown className="text-lg" />
+            <p className="font-dm_sans text-sm m-1">about me</p>
+            <IoIosArrowDropdown className="text-lg m-1" />
           </button>
-          {/* </div> */}
         </nav>
       </div>
     </div>
