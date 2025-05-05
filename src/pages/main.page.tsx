@@ -43,14 +43,14 @@ export default function MainPage({ parallaxRef }: IParallaxRef) {
             className={`
               relative mt-auto h-14 w-36 flex text-center items-center justify-center bg-secondary_bg text-white rounded-lg
               before:top-0 before:left-0 
+              before:content-['']
               before:absolute before:h-full before:w-full 
               before:bg-gradient-to-tr from-neon_violet via-pink-600 to-main_pink 
               before:rounded-lg
               before:bg-[length:200%_200%]
               before:blur-lg before:brightness-125 before:-z-10 before:opacity-0 before:inset-0
-              before:animate-none
-              before:hover:animate-button-move_bg_appearance
-              before:[&:not(:hover)]:animate-disappearance-delay-0
+              before:transition-all before:duration-500 before:ease-out
+             hover:before:opacity-100 hover:before:animate-move-background
               `}
           >
             <p className="font-dm_sans text-sm m-1">about me</p>

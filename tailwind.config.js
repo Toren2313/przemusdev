@@ -79,12 +79,6 @@ export default withMT = {
          *
          */
         "move-background": "move_background 3s ease infinite",
-
-        /**
-         * Button custom aniamtions
-         *
-         */
-        "button-move_bg_appearance": "appearance 0.3s ease-in-out forwards,move_background 3s ease infinite",
       },
       transitionTimingFunction: {
         "ease-out-quad": "cubic-bezier(0.165, 0.84, 0.44, 1)",

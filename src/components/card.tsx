@@ -23,7 +23,7 @@ function Card(props: IProjectCardProps) {
             {props.externaLink && props.openSrc === true ? (
               <button
                 onClick={() => openInNewTab(props.externaLink!)}
-                className="w-1/2 h-full bg-secondary_bg rounded-lg flex flex-row justify-center items-center"
+                className="w-1/2 h-full bg-secondary_bg rounded-lg flex flex-row justify-center items-center transition duration-100 hover:scale-105"
               >
                 <p className="text-base font-bold text-center w-3/4 h-full font-dm_sans p-2">repository</p>
                 <FiExternalLink className="m-2" />
