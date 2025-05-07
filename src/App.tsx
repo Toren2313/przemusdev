@@ -4,7 +4,7 @@ import { Navbar } from "./components/navbar";
 import AboutPage from "./pages/about.page";
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { useEffect, useRef, useState } from "react";
-import Loader from "./components/loader";
+import { Loader } from "./components/loader";
 import ProjectsPage from "./pages/projects.page";
 
 export default function App() {

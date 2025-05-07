@@ -2,7 +2,7 @@ import IProjectCardProps from "../interfaces/IProjectCardProps";
 import { FiExternalLink } from "react-icons/fi";
 import { FaUnlock, FaLock } from "react-icons/fa";
 
-function Card(props: IProjectCardProps) {
+export const Card = (props: IProjectCardProps) => {
   const openInNewTab = (url: string | URL): void => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
     if (newWindow) newWindow.opener = null;
@@ -45,6 +45,6 @@ function Card(props: IProjectCardProps) {
       </div>
     </div>
   );
-}
+};
 
 export default Card;

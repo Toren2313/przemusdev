@@ -1,4 +1,4 @@
-function Loader() {
+export const Loader = () => {
   const customGradientText: string =
     "before:bg-gradient-to-tr before:from-neon_violet before:via-pink-600 before:to-main_pink before:text-transparent before:bg-clip-text";
   return (
@@ -11,6 +11,4 @@ function Loader() {
       </h1>
     </main>
   );
-}
-
-export default Loader;
+};
