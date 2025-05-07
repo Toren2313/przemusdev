@@ -14,5 +14,5 @@ export abstract class Helper {
    * @description
    * Style for every section (only parent element)
    */
-  static readonly SECTION_BASE_STYLE: string = "h-[calc(100vh-5rem)] w-screen flex";
+  static readonly SECTION_BASE_STYLE: string = "h-[calc(100vh-5rem)] w-full flex";
 }
