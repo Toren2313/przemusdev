@@ -1,12 +1,21 @@
-import { GoHome, GoFileDirectory } from "react-icons/go";
+import { GoHome, GoFileDirectory, GoProject } from "react-icons/go";
 import { FaEye } from "react-icons/fa";
 import IParallaxRef from "../interfaces/IParalllaxRef";
 import IGradientSvgProps from "../interfaces/IGradientSvgProps";
+import { Tooltip } from "./tooltip";
+import { TooltipPos } from "../interfaces/ITooltip";
 
 export const Navbar = ({ parallaxRef }: IParallaxRef) => {
   const handleScroll = (page: number) => {
     parallaxRef.current?.scrollTo(page);
   };
+  /**
+   * Generates a gradient SVG for text styling.
+   * @param {string} startColor - Start hex value of color.
+   * @param {string} middleColor - Middle hex value of color. (not required)
+   * @param {string} endColor - End hex value of color.
+   * @returns {JSX.Element} JSX for SVG gradient.
+   */
   const CreateGradientSVG = ({ startColor, middleColor, endColor }: IGradientSvgProps): JSX.Element => {
     return (
       <svg width="0" height="0">
@@ -22,17 +31,26 @@ export const Navbar = ({ parallaxRef }: IParallaxRef) => {
   const btnStyle: string = "h-full text-3xl font-bold transition duration-75 ease-in";
 
   return (
-    <div className="absolute top-0 h-20 w-screen flex justify-between items-center text-center z-50 backdrop-blur-md shadow-sm">
+    <div className="fixed top-0 h-20 w-screen flex justify-between items-center text-center z-50 backdrop-blur-md shadow-sm">
       <button onClick={() => handleScroll(0)}>
-        <h1 className="text-xl font-dm_sans p-4 hover:underline">Przemyslaw</h1>
+        <h1 className="text-xl font-dm_sans p-4 hover:underline">PrzemusDev</h1>
       </button>
       <nav className="bg-secondary_bg h-1/2 w-1/5 flex flex-row gap-1 items-center justify-start rounded-xl p-4">
         <CreateGradientSVG startColor="#b026ff" middleColor="#db2777" endColor="#b50094" />
         <button onClick={() => handleScroll(0)}>
-          <GoHome className={`${btnStyle} hover:fill-[url(#gradient)]`} />
+          <Tooltip position={TooltipPos.bottom} gap={48} text="home">
+            <GoHome className={`${btnStyle} hover:fill-[url(#gradient)]`} />
+          </Tooltip>
         </button>
         <button onClick={() => handleScroll(1)}>
-          <GoFileDirectory className={`${btnStyle} hover:fill-[url(#gradient)]`} />
+          <Tooltip position={TooltipPos.bottom} gap={48} text="about me">
+            <GoFileDirectory className={`${btnStyle} hover:fill-[url(#gradient)]`} />
+          </Tooltip>
+        </button>
+        <button onClick={() => handleScroll(2)}>
+          <Tooltip position={TooltipPos.bottom} gap={48} text="My Projects">
+            <GoProject className={`${btnStyle} hover:fill-[url(#gradient)]`} />
+          </Tooltip>
         </button>
       </nav>
       <h1 className="text-xl p-4 flex flex-row gap-10">
