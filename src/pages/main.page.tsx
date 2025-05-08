@@ -12,9 +12,9 @@ export default function MainPage({ parallaxRef }: IParallaxRef) {
   const pStyle: string = "text-2xl font-dm_sans font-extrabold flex flex-col";
 
   return (
-    <div className="min-w-full h-full min-h-full w-full flex flex-row">
-      <GradientHighlight position={HighlightPosition.start} />
-      <div className="min-h-screen w-[90%] pt-20 flex">
+    <div className={Helper.SECTION_MAIN_STYLE}>
+      <GradientHighlight position={HighlightPosition.top_left} />
+      <div className="min-h-screen w-full pt-20 flex">
         <div className={`flex-col text-center items-center justify-center ${Helper.SECTION_BASE_STYLE}`}>
           <div className=" h-96 w-[64rem] p-1 text-center rounded-lg flex flex-col items-center justify-start bg-gradient-to-tr from-neon_violet via-pink-600 to-main_pink">
             <div className="bg-bg_color h-full w-full">
@@ -63,7 +63,7 @@ export default function MainPage({ parallaxRef }: IParallaxRef) {
           </nav>
         </div>
       </div>
-      <GradientHighlight position={HighlightPosition.end} />
+      <GradientHighlight position={HighlightPosition.bottom_right} />
     </div>
   );
 }
